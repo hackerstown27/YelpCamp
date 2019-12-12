@@ -11,17 +11,21 @@ var seeder = require("./modules/seed");
 var User = require("./modules/userSchema");
 var methodOveride = require("method-override");
 var flash = require("connect-flash");
+var MongoDBStore = require('connect-mongodb-session')(session);
 
 
 var campsitesRoutes = require("./routes/campsites");
 var commentsRoutes = require("./routes/comments");
 var indexRoutes = require("./routes/index");
 
+var DBURL = process.env.DBURL || "mongodb://localhost:27017/camps",
+    IP = process.env.IP || "127.0.0.1",
+    PORT = process.env.PORT || 5500;
 //============================================================
 // CONFIG
 //============================================================
 var app = express();
-mongoose.connect("mongodb+srv://tarun:test123@cluster0-ylsdk.mongodb.net/camps?retryWrites=true&w=majority", function(err){
+mongoose.connect(DBURL, function(err){
     if (err){
         console.log(err);
     }
@@ -63,6 +67,6 @@ app.use("/campsites", campsitesRoutes);
 app.use("/campsites/:id/comments/", commentsRoutes);
 app.use(indexRoutes);
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(PORT, IP, function(){
     console.log("server started successfully");
 });
