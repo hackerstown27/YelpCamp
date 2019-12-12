@@ -25,7 +25,7 @@ var app = express();
 var DBURL = process.env.DBURL || "mongodb://127.0.0.1:27017/camps";
 var IP = process.env.IP || "127.0.0.1";
 var PORT = process.env.PORT || 5500;
-mongoose.connect(DBURL, function(err){
+mongoose.connect("mongodb+srv://tarun:test123@cluster0-ylsdk.mongodb.net/camps?retryWrites=true", function(err){
     if (err){
         console.log(err);
     }
