@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Edit <%= camp.name %></h1>
+        </div>
+    </div>
+    
+
+    <form action="/campsites/<%=camp._id%>?_method=PUT" method="POST">
+        <div class="container">
+            <input class="form-control mb-2" type="text" placeholder="Camp Name" name="camp[name]" value="<%=camp.name%>" required>
+            <input class="form-control mb-2" type="text" placeholder="Image Url" name="camp[image]" value="<%=camp.image%>" required>
+            <input class="btn btn-primary btn-block mb-2" type="submit" value="Submit">
+            <a href="/" class="btn btn-primary btn-block mb-2">Go Back</a>
+        </div>
+    </form>
+
+
+<% include ../partials/footer %>

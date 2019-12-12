@@ -1,0 +1,45 @@
+<% include ../partials/header %>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Add New CampSites</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <form action="/campsites" method="POST">
+            <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault01">CampGround Name</label>
+                <input type="text" class="form-control" id="validationDefault01" placeholder="Eg. Dragon Valley" name="camp_name" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault02">Location</label>
+                <input type="text" class="form-control" id="validationDefault02" placeholder="Eg. Bogins & Burgs" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault02">Image Url</label>
+                <input type="text" class="form-control" id="validationDefault02" placeholder="Image Url" name="img_url" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault03">City</label>
+                <input type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationDefault04">State</label>
+                <input type="text" class="form-control" id="validationDefault04" placeholder="State" required>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationDefault05">Zip</label>
+                <input type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+            </div>
+                
+                <label for="validationDefault02">Description</label>
+                <textarea name="desc" id="validationDefault02" cols="30" rows="5" placeholder="A Qiet And Peacefull Place to Visit"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+
+<% include ../partials/footer %>

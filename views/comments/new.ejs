@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+
+<div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Add New Comments to <%= camp.name %></h1>
+        </div>
+    </div>
+    
+
+    <form action="/campsites/<%=camp._id%>/comments/" method="POST">
+        <div class="container">
+            <input class="form-control mb-2" type="text" placeholder="Comment" name="data" required>
+            <input class="btn btn-primary btn-block mb-2" type="submit" value="Submit">
+            <a href="/campsites/<%= camp._id %>" class="btn btn-primary btn-block mb-2">Go Back</a>
+        </div>
+    </form>
+
+
+<% include ../partials/footer %>
