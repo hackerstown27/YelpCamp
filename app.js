@@ -21,7 +21,11 @@ var indexRoutes = require("./routes/index");
 // CONFIG
 //============================================================
 var app = express();
-mongoose.connect("mongodb+srv://tarun:test123@cluster0-ylsdk.mongodb.net/camps?retryWrites=true&w=majority", function(err){
+
+var DBURL = process.env.DBURL || "mongodb://127.0.0.1:27017/camps";
+var IP = process.env.IP || "127.0.0.1";
+var PORT = process.env.PORT || 5500;
+mongoose.connect(DBURL, function(err){
     if (err){
         console.log(err);
     }
@@ -63,6 +67,6 @@ app.use("/campsites", campsitesRoutes);
 app.use("/campsites/:id/comments/", commentsRoutes);
 app.use(indexRoutes);
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(PORT, IP, function(){
     console.log("server started successfully");
 });
