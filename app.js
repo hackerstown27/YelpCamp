@@ -11,7 +11,6 @@ var seeder = require("./modules/seed");
 var User = require("./modules/userSchema");
 var methodOveride = require("method-override");
 var flash = require("connect-flash");
-var MongoDBStore = require('connect-mongodb-session')(session);
 
 
 var campsitesRoutes = require("./routes/campsites");
